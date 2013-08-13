@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to root_url, flash: {success: 'Comment successfully created.'} }
+      format.js { render layout: false }
     end
   end
 
@@ -41,6 +42,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to root_url, notice: 'Comment happiness increased +1!' }
+      format.js { render layout: false }
     end
   end
 
@@ -52,6 +54,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to root_url, notice: 'Comment owner successfully mortified.' }
+      format.js { render layout: false }
     end
   end
 end

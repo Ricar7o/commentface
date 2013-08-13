@@ -1,0 +1,8 @@
+(function () {
+  $(".comment[data-id=<%= @comment.id %>]").next().fadeToggle(100, function() {
+      $(this).remove();
+  });
+  $(".comment[data-id=<%= @comment.id %>]").fadeToggle(100, function() {
+      $(this).remove();
+  });
+})();

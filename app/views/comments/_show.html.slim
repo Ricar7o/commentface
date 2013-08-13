@@ -6,11 +6,11 @@
       strong.name #{comment.name}:&nbsp;
       span.message = comment.message
     ul.inline-list
-      li.score #{comment.score} likes
+      li.score #{pluralize(comment.score, 'like', 'likes')}
       li
-        = link_to 'Like', upvote_comment_path(comment), :method => :post
+        = link_to 'Like', upvote_comment_path(comment), :method => :post, remote: true
       li
         a href="#" data-comment-id=comment.id Edit
       li
-        = link_to 'Delete :(', comment, :method => :delete, :data => { confirm: 'Are you sure?' }
+        = link_to 'Delete :(', comment, :method => :delete, :data => { confirm: 'Are you sure?' }, remote: true
 hr
